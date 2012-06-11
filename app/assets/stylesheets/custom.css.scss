@@ -82,6 +82,11 @@ aside {
 	@include box_sizing;
 }
 
+#usersindex {
+  text-color: $lightGray;
+  line-height: 1;
+}
+
 /* footer */
 
 footer {
@@ -89,6 +94,7 @@ footer {
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: $lightGray;
+  text-decoration: none;
 
 
   a {
@@ -114,6 +120,7 @@ footer {
 
 /* header */
 
+
 #logo {
 	float: left;
 	margin-right: 10px;
@@ -124,9 +131,11 @@ footer {
 	padding-top: 9px;
 	font-weight: bold;
 	line-height: 1;
+  width: 113px;
+  height: 45px;
 
 	&:hover {
-	color: #FFF;
+	color: #FF3300;
 	text-decoration: none;
 	}
 }

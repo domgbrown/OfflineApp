@@ -1,3 +1,5 @@
-<% @user.each do |u| %>
-	<%= u.name %>, <%= u.email %>
-<% end %>
+<div id="userindex">
+	<% @user.each do |u| %>
+		<%= u.name %>, <%= u.email %></br>
+	<% end %>
+</div>
