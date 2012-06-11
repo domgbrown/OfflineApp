@@ -21,9 +21,9 @@ describe "User pages" do
   
   describe "signup" do
   	before { visit signup_path }
-  	let(:submit) { "Create my account" }
+    let(:submit) { "Create my account" }
 
-  	describe "submit valid signup form" do
+  	describe "valid submission" do
   		before do
   		fill_in "Name",         with: "Example User"
   		fill_in "Email",        with: "user@example.com"
@@ -31,15 +31,23 @@ describe "User pages" do
   		fill_in "Confirmation", with: "foobar"
   		end
   		it "should create user" do
-  			expect { click_button "Create my account" }.to change(User, :count).by(1)
+  			expect { click_button :submit }.to change(User, :count).by(1)
   		end
   	end
 
-  	describe "submit blank signup form" do
+  	describe "invalid submission" do
   		it "should not create user" do
   			expect { click_button "Create my account" }.not_to change(User, :count)
   		end
   	end
+
+    describe "after submission" do
+      before { click_button :submit }
+
+      it { should have_selector('title', text: 'Sign up') }
+      it { should have_content('error') }
+    end
+
   end
 
 end
